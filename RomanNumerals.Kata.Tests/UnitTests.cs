@@ -5,9 +5,11 @@ namespace RomanNumerals.Kata.Tests
     public class UnitTests
     {
         [Fact]
-        public void Test1()
+        public void OneEqualsI()
         {
-
+            int input = 1;
+            string output = RomanNumerals.ConvertValue(input);
+            Assert.Equals("I", output);
         }
     }
 }
