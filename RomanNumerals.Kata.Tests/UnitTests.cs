@@ -9,7 +9,7 @@ namespace RomanNumerals.Kata.Tests
         {
             int input = 1;
             string output = RomanNumerals.ConvertValue(input);
-            Assert.Equals("I", output);
+            Assert.Equal("I", output);
         }
     }
 }
