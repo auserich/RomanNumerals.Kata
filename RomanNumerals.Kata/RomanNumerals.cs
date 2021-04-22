@@ -6,7 +6,16 @@ namespace RomanNumerals.Kata
     {
         public static string ConvertValue(int input)
         {
-            return "I";
+            if (input == 1)
+            {
+                return "I";
+            }
+            else if (input == 2)
+            {
+                return "II";
+            }
+
+            return "None";
         }
 
         public static int CheckNegative(int input)
