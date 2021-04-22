@@ -2,7 +2,7 @@
 {
     public class RomanNumerals
     {
-        public string ConvertValue(int input)
+        public static string ConvertValue(int input)
         {
             return "I";
         }
