@@ -10,7 +10,7 @@ namespace RomanNumerals.Kata
 
             for (int i = 0; i < input; i++)
             {
-                output = output.Insert(0, "I");
+                output = output.Insert(output.Length, "I");
             }
 
             return output;

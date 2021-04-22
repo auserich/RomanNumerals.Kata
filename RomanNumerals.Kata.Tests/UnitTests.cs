@@ -36,6 +36,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ReduceValue_IIIToIV()
+        {
+            string input = "IIII";
+
+            string output = RomanNumerals.ReduceValue(input);
+
+            Assert.Equal("IV", output);
+        }
+
+        [Fact]
         public void ConvertValue_NegativeNumber_ThrowsOutOfRangeException()
         {
             int input = -1;
