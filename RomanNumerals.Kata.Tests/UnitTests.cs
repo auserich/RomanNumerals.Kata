@@ -16,6 +16,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_TwoToII()
+        {
+            int input = 1;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("II", output);
+        }
+
+        [Fact]
         public void ConvertValue_NegativeNumber_ThrowsOutOfRangeException()
         {
             int input = -1;
