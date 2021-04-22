@@ -1,4 +1,5 @@
 using Xunit;
+using System;
 
 namespace RomanNumerals.Kata.Tests
 {
@@ -12,6 +13,16 @@ namespace RomanNumerals.Kata.Tests
             string output = RomanNumerals.ConvertValue(input);
 
             Assert.Equal("I", output);
+        }
+
+        [Fact]
+        public void ConvertValue_NegativeNumber_ThrowsOutOfRangeException()
+        {
+            int input = -1;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Throws<ArgumentOutOfRangeException>(() => { RomanNumerals.CheckNegative(input); });
         }
     }
 }
