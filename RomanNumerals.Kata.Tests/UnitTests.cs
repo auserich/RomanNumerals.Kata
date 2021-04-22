@@ -18,7 +18,7 @@ namespace RomanNumerals.Kata.Tests
         [Fact]
         public void ConvertValue_TwoToII()
         {
-            int input = 1;
+            int input = 2;
 
             string output = RomanNumerals.ConvertValue(input);
 
