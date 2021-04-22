@@ -26,6 +26,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_FourToIV()
+        {
+            int input = 4;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("IV", output);
+        }
+
+        [Fact]
         public void ConvertValue_NegativeNumber_ThrowsOutOfRangeException()
         {
             int input = -1;
