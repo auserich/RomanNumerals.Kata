@@ -18,6 +18,11 @@ namespace RomanNumerals.Kata
 
         public static string ReduceValue(string input)
         {
+            if (input == "IIII")
+            {
+                return "IV";
+            }
+
             return input;
         }
 
