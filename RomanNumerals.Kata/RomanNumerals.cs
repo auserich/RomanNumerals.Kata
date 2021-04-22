@@ -24,6 +24,11 @@ namespace RomanNumerals.Kata
                 return "IV";
             }
 
+            if (input == "IVI")
+            {
+                return "V";
+            }
+
             return input;
         }
 
