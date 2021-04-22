@@ -16,6 +16,11 @@ namespace RomanNumerals.Kata
             return output;
         }
 
+        public static string ReduceValue(string input)
+        {
+            return input;
+        }
+
         public static int CheckNegative(int input)
         {
             if (input < 0)
