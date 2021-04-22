@@ -36,6 +36,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_FiveToV()
+        {
+            int input = 5;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("V", output);
+        }
+
+        [Fact]
         public void ReduceValue_IIIToIV()
         {
             string input = "IIII";
