@@ -166,6 +166,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_FiveHundredToD()
+        {
+            int input = 500;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("D", output);
+        }
+
+        [Fact]
         public void ConvertValue_NineHundredToCM()
         {
             int input = 900;
