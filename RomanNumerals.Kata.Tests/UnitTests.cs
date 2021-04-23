@@ -46,6 +46,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_EightToVIII()
+        {
+            int input = 8;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("VIII", output);
+        }
+
+        [Fact]
         public void ConvertValue_TenToX()
         {
             int input = 10;
