@@ -56,6 +56,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_NineToIX()
+        {
+            int input = 9;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("IX", output);
+        }
+
+        [Fact]
         public void ConvertValue_TenToX()
         {
             int input = 10;
