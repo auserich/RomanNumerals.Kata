@@ -7,13 +7,16 @@ namespace RomanNumerals.Kata
         // Method that takes an integer value that builds a string of Roman numerals from the value of the input
         public static string ConvertValue(int input)
         {
-            CheckIfValidInput(input);
+            CheckIfValidInput(input); // checks legal input is being converted
 
+            // Create variables for conversion
             string output = "";
             int count;
             int denominator;
             string roman;
 
+            // Loop through input value while removing its current largest denominator and building a Roman numeral
+            // from the given value
             while (input > 0)
             {
                 roman = GetRomanNumeral(input);
@@ -26,7 +29,8 @@ namespace RomanNumerals.Kata
             return output;
         }
 
-        public static string GetRomanNumeral(int input)
+        // Helper method that will return the Roman numeral associated with the numeric value passed in.
+        private static string GetRomanNumeral(int input)
         {
             if (input / 1000 > 0)
                 return "M";
@@ -56,7 +60,8 @@ namespace RomanNumerals.Kata
             return "I";
         }
 
-        public static int GetDecimalValue(string input)
+        // Helper method that will return the value associated with the Roman numeral value passed in.
+        private static int GetDecimalValue(string input)
         {
             if (input == "M")
                 return 1000;
@@ -86,9 +91,9 @@ namespace RomanNumerals.Kata
             return 1;
         }
 
-        // Method that takes an input string, an integer to use as a counter, and a string to represent the Roman
+        // Helper method that takes an input string, an integer to use as a counter, and a string to represent the Roman
         // numeral to append to the input string.
-        public static string BuildRomanNumeral(string input, int count, string roman)
+        private static string BuildRomanNumeral(string input, int count, string roman)
         {
             string output = input;
 
@@ -115,30 +120,36 @@ namespace RomanNumerals.Kata
             return input;
         }
 
+        // Throws ArgumentOutOfRangeException if input is less than 0.
         public static void CheckNegative(int input)
         {
             if (input < 0)
                 throw new ArgumentOutOfRangeException();
         }
 
+        // Throws ArgumentOutOfRangeException if input is greater than 3999
         public static void CheckBeyondUpperLimit(int input)
         {
             if (input >= 4000)
                 throw new ArgumentOutOfRangeException();
         }
 
+        // Throws ArgumentOutOfRangeException if input is less than 0 or greater than 3999
         public static void CheckOutOfRange(int input)
         {
             if (input < 0 || input >= 4000)
                 throw new ArgumentOutOfRangeException();
         }
 
+        // Throws ArgumentNullException if input is equal to 0.
         public static void CheckIfZero(int input)
         {
             if (input == 0)
                 throw new ArgumentNullException();
         }
 
+        // Throws either ArgumentOutOfRangeException if input is out of the allowed range or
+        // throws ArgumentNullException if input is 0.
         public static void CheckIfValidInput(int input)
         {
             CheckOutOfRange(input);
