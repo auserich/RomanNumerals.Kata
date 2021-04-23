@@ -246,5 +246,14 @@ namespace RomanNumerals.Kata.Tests
 
             Assert.Throws<ArgumentOutOfRangeException>(() => { RomanNumerals.ConvertValue(input); });
         }
+
+        [Fact]
+        public void ConvertValue_Zero_ThrowsNullException()
+        {
+            int input = 0;
+
+            Assert.Throws<ArgumentNullException>(() => { RomanNumerals.CheckIfZero(input); });
+        }
+         
     }
 }
