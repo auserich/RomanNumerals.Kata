@@ -12,8 +12,14 @@ namespace RomanNumerals.Kata
 
             while (input > 0)
             {
+                if (input / 1000 > 0)
+                {
+                    count = input / 1000;
+                    output = BuildRomanNumeral(output, count, "M");
+                    input -= 1000;
+                }
                 // Series of checks to find highest denominator of Roman numeral to match with input
-                if (input / 900 > 0)
+                else if (input / 900 > 0)
                 {
                     count = 1;
                     output = BuildRomanNumeral(output, count, "CM");
