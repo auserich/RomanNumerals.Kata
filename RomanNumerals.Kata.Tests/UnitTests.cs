@@ -186,6 +186,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_OneThousandToM()
+        {
+            int input = 1000;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("M", output);
+        }
+
+        [Fact]
         public void ReduceValue_IIIToIV()
         {
             string input = "IIII";
