@@ -46,6 +46,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_TenToX()
+        {
+            int input = 10;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("X", output);
+        }
+
+        [Fact]
         public void ReduceValue_IIIToIV()
         {
             string input = "IIII";
