@@ -196,6 +196,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_TwoThousandSixHundredThirtyNineToMMDCXXXIX()
+        {
+            int input = 2639;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("MMDCXXXIX", output);
+        }
+
+        [Fact]
         public void ReduceValue_IIIToIV()
         {
             string input = "IIII";

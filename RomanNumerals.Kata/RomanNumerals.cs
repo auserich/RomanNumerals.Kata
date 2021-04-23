@@ -16,7 +16,7 @@ namespace RomanNumerals.Kata
                 {
                     count = input / 1000;
                     output = BuildRomanNumeral(output, count, "M");
-                    input -= 1000;
+                    input -= (1000 * count);
                 }
                 // Series of checks to find highest denominator of Roman numeral to match with input
                 else if (input / 900 > 0)
