@@ -232,7 +232,7 @@ namespace RomanNumerals.Kata.Tests
 
             string output = RomanNumerals.ConvertValue(input);
 
-            Assert.Throws<ArgumentOutOfRangeException>(() => { RomanNumerals.ConvertValue(input); });
+            Assert.Throws<ArgumentOutOfRangeException>(() => { RomanNumerals.CheckBeyondUpperLimit(input); });
         }
     }
 }

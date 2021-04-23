@@ -113,14 +113,16 @@ namespace RomanNumerals.Kata
             return input;
         }
 
-        public static int CheckNegative(int input)
+        public static void CheckNegative(int input)
         {
             if (input < 0)
-            {
                 throw new ArgumentOutOfRangeException();
-            }
+        }
 
-            return input;
+        public static void CheckBeyondUpperLimit(int input)
+        {
+            if (input >= 4000)
+                throw new ArgumentOutOfRangeException();
         }
     }
 }
