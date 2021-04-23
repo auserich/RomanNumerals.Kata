@@ -7,8 +7,7 @@ namespace RomanNumerals.Kata
         // Method that takes an integer value that builds a string of Roman numerals from the value of the input
         public static string ConvertValue(int input)
         {
-            CheckNegative(input);
-            CheckBeyondUpperLimit(input);
+            CheckOutOfRange(input);
 
             string output = "";
             int count;
@@ -125,6 +124,12 @@ namespace RomanNumerals.Kata
         public static void CheckBeyondUpperLimit(int input)
         {
             if (input >= 4000)
+                throw new ArgumentOutOfRangeException();
+        }
+
+        public static void CheckOutOfRange(int input)
+        {
+            if (input < 0 || input >= 4000)
                 throw new ArgumentOutOfRangeException();
         }
     }
