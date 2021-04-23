@@ -22,7 +22,7 @@ namespace RomanNumerals.Kata
                 else if (input / 40 > 0)
                 {
                     count = 1;
-                    output = BuildRomanNumeral(output, count, "IL");
+                    output = BuildRomanNumeral(output, count, "XL");
                     input -= 40;
                 }
                 else if (input / 10 > 0)

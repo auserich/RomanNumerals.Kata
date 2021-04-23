@@ -96,13 +96,13 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
-        public void ConvertValue_FortyTwoToILII()
+        public void ConvertValue_FortyTwoToXLII()
         {
             int input = 42;
 
             string output = RomanNumerals.ConvertValue(input);
 
-            Assert.Equal("ILII", output);
+            Assert.Equal("XLII", output);
         }
 
         [Fact]
@@ -113,6 +113,16 @@ namespace RomanNumerals.Kata.Tests
             string output = RomanNumerals.ConvertValue(input);
 
             Assert.Equal("LV", output);
+        }
+
+        [Fact]
+        public void ConvertValue_NinetyToXC()
+        {
+            int input = 90;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("XC", output);
         }
 
         [Fact]
