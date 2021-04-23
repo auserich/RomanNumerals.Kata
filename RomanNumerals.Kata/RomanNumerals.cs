@@ -19,6 +19,12 @@ namespace RomanNumerals.Kata
                     output = BuildRomanNumeral(output, count, "X");
                     input -= (10 * count);
                 }
+                else if (input / 9 > 0)
+                {
+                    count = 1;
+                    output = BuildRomanNumeral(output, count, "IX");
+                    input -= 9;
+                }
                 else if (input / 5 > 0)
                 {
                     count = input / 5;
