@@ -13,7 +13,13 @@ namespace RomanNumerals.Kata
             while (input > 0)
             {
                 // Series of checks to find highest denominator of Roman numeral to match with input
-                if (input / 40 > 0)
+                if (input / 50 > 0)
+                {
+                    count = input / 50;
+                    output = BuildRomanNumeral(output, count, "L");
+                    input -= (50 * count);
+                }
+                else if (input / 40 > 0)
                 {
                     count = 1;
                     output = BuildRomanNumeral(output, count, "IL");
