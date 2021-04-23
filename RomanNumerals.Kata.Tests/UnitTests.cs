@@ -136,6 +136,26 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_TwoHundredFiftySixtoCCLVI()
+        {
+            int input = 256;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("CCLVI", output);
+        }
+
+        [Fact]
+        public void ConvertValue_ThreeHundredEightyNineToCCCLXXXIX()
+        {
+            int input = 389;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("CCCLXXXIX", output);
+        }
+
+        [Fact]
         public void ReduceValue_IIIToIV()
         {
             string input = "IIII";
