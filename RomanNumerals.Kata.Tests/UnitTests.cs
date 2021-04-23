@@ -3,6 +3,9 @@ using System;
 
 namespace RomanNumerals.Kata.Tests
 {
+    /// <summary>
+    /// Contains unit tests in order to test the functionality of the RomanNumeral class's ConvertNumberToRomanNumeral method.
+    /// </summary>
     public class UnitTests
     {
         [Fact]

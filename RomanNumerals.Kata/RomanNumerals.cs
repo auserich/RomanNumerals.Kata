@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace RomanNumerals.Kata
 {
@@ -18,7 +19,7 @@ namespace RomanNumerals.Kata
             CheckIfValidNumber(number); // checks legal input is being converted
 
             // Create variables for conversion
-            string output = string.Empty;
+            StringBuilder output = new StringBuilder();
             int count;
             int denominator;
             string roman = string.Empty;
@@ -34,7 +35,7 @@ namespace RomanNumerals.Kata
                 number -= (denominator * count);
             }
 
-            return output;
+            return output.ToString();
         }
 
         /// <summary>
@@ -108,19 +109,16 @@ namespace RomanNumerals.Kata
         }
 
         /// <summary>
-        /// Takes an input string, an integer to use as a counter, and a string to represent the Roman
-        /// numeral to append to the input string.
+        /// Builds a Roman numeral value from the values passed in.
         /// </summary>
-        /// <param name="input">String that will represent the final Roman numeral value for the numeric value being converted.</param>
+        /// <param name="input">StringBuilder that will represent the final Roman numeral value for the numeric value being converted.</param>
         /// <param name="count">Number of times the given Roman numeral will need to be appended to the string.</param>
         /// <param name="roman">Roman numeral that will be appended to the string.</param>
         /// <returns>Returns string that is the input string with newly appended Roman numerals.</returns>
-        private static string BuildRomanNumeral(string input, int count, string roman)
+        private static StringBuilder BuildRomanNumeral(StringBuilder input, int count, string roman)
         {
             for (int i = 0; i < count; i++)
-            {
-                input = input.Insert(input.Length, roman);
-            }
+                input.Append(roman);
 
             return input;
         }
