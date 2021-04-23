@@ -126,6 +126,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_OneHundredSixtySevenToCLXVII()
+        {
+            int input = 167;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("CLXVII", output);
+        }
+
+        [Fact]
         public void ReduceValue_IIIToIV()
         {
             string input = "IIII";
