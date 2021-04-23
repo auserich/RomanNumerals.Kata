@@ -166,6 +166,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_NineHundredToCM()
+        {
+            int input = 900;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("CM", output);
+        }
+
+        [Fact]
         public void ReduceValue_IIIToIV()
         {
             string input = "IIII";
