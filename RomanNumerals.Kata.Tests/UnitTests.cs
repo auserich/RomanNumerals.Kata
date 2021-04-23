@@ -26,6 +26,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertNumberToRomanNumeral_ThreeToIII()
+        {
+            int input = 3;
+
+            string output = RomanNumerals.ConvertNumberToRomanNumeral(input);
+
+            Assert.Equal("III", output);
+        }
+
+        [Fact]
         public void ConvertNumberToRomanNumeral_FourToIV()
         {
             int input = 4;
@@ -242,7 +252,7 @@ namespace RomanNumerals.Kata.Tests
         {
             int input = 0;
 
-            Assert.Throws<ArgumentNullException>(() => { RomanNumerals.ConvertNumberToRomanNumeral(input); });
+            Assert.Throws<ArgumentException>(() => { RomanNumerals.ConvertNumberToRomanNumeral(input); });
         }
          
     }

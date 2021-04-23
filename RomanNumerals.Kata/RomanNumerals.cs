@@ -2,9 +2,17 @@
 
 namespace RomanNumerals.Kata
 {
+    /// <summary>
+    /// Used for converting a numeric value into its Roman numeral equivalent.
+    /// Supports conversions for values between 1 - 3999.
+    /// </summary>
     public class RomanNumerals
     {
-        // Method that takes an integer value that builds a string of Roman numerals from the value of the input
+        /// <summary>
+        /// Takes an integer value that builds a string of Roman numerals from the value of the input.
+        /// </summary>
+        /// <param name="number">Number that will be converted to Roman numeral.</param>
+        /// <returns>Return a string that is the Roman numeral for the number inputted.</returns>
         public static string ConvertNumberToRomanNumeral(int number)
         {
             CheckIfValidNumber(number); // checks legal input is being converted
@@ -13,7 +21,7 @@ namespace RomanNumerals.Kata
             string output = string.Empty;
             int count;
             int denominator;
-            string roman;
+            string roman = string.Empty;
 
             // Loop through input value while removing its current largest denominator and building a Roman numeral
             // from the given value
@@ -29,7 +37,11 @@ namespace RomanNumerals.Kata
             return output;
         }
 
-        // Helper method that will return the Roman numeral associated with the numeric value passed in.
+        /// <summary>
+        /// Returns the Roman numeral associated with the numeric value passed in.
+        /// </summary>
+        /// <param name="number">Number that is passed in to identify its Roman numeral value.</param>
+        /// <returns>Returns a string that is the Roman numeral value for the number passed in.</returns>
         private static string GetRomanNumeral(int number)
         {
             if (number / 1000 > 0)
@@ -60,7 +72,11 @@ namespace RomanNumerals.Kata
             return "I";
         }
 
-        // Helper method that will return the value associated with the Roman numeral value passed in.
+        /// <summary>
+        /// Returns the value associated with the Roman numeral value passed in.
+        /// </summary>
+        /// <param name="roman">Roman numeral that is passed in to identify the numeric value associated with it.</param>
+        /// <returns>Returns the numeric value for the Roman numeral passed in.</returns>
         private static int GetDecimalValue(string roman)
         {
             if (roman == "M")
@@ -91,50 +107,51 @@ namespace RomanNumerals.Kata
             return 1;
         }
 
-        // Helper method that takes an input string, an integer to use as a counter, and a string to represent the Roman
-        // numeral to append to the input string.
+        /// <summary>
+        /// Takes an input string, an integer to use as a counter, and a string to represent the Roman
+        /// numeral to append to the input string.
+        /// </summary>
+        /// <param name="input">String that will represent the final Roman numeral value for the numeric value being converted.</param>
+        /// <param name="count">Number of times the given Roman numeral will need to be appended to the string.</param>
+        /// <param name="roman">Roman numeral that will be appended to the string.</param>
+        /// <returns>Returns string that is the input string with newly appended Roman numerals.</returns>
         private static string BuildRomanNumeral(string input, int count, string roman)
         {
-            string output = input;
-
             for (int i = 0; i < count; i++)
             {
-                output = output.Insert(output.Length, roman);
+                input = input.Insert(input.Length, roman);
             }
 
-            return output;
+            return input;
         }
 
-        // Throws ArgumentOutOfRangeException if input is less than 0.
-        private static void CheckNegative(int number)
-        {
-            if (number < 0)
-                throw new ArgumentOutOfRangeException();
-        }
-
-        // Throws ArgumentOutOfRangeException if input is greater than 3999
-        private static void CheckBeyondUpperLimit(int number)
-        {
-            if (number >= 4000)
-                throw new ArgumentOutOfRangeException();
-        }
-
-        // Throws ArgumentOutOfRangeException if input is less than 0 or greater than 3999
+        /// <summary>
+        /// Checks if the number being passed in is a valid number to be converted to Roman numeral.
+        /// </summary>
+        /// <param name="number">Number that is being validated.</param>
+        /// <exception cref="ArgumentOutOfRangeException">Exception that will be thrown if the number passed in it outside
+        /// of the allowed range.</exception>
         private static void CheckOutOfRange(int number)
         {
             if (number < 0 || number >= 4000)
                 throw new ArgumentOutOfRangeException();
         }
 
-        // Throws ArgumentNullException if input is equal to 0.
+        /// <summary>
+        /// Checks if the number being passed in is a non-zero number.
+        /// </summary>
+        /// <param name="number">Number that is being validated.</param>
+        /// <exception cref="ArgumentException">Exception that will be thrown if the number is 0.</exception>
         private static void CheckIfZero(int number)
         {
             if (number == 0)
-                throw new ArgumentNullException();
+                throw new ArgumentException();
         }
 
-        // Throws either ArgumentOutOfRangeException if input is out of the allowed range or
-        // throws ArgumentNullException if input is 0.
+        /// <summary>
+        /// Helps validate that the number passed in is safe to be converted to Roman numerals.
+        /// </summary>
+        /// <param name="number">Number that is being validated.</param>
         private static void CheckIfValidNumber(int number)
         {
             CheckOutOfRange(number);
