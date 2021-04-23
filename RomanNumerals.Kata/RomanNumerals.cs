@@ -5,87 +5,87 @@ namespace RomanNumerals.Kata
     public class RomanNumerals
     {
         // Method that takes an integer value that builds a string of Roman numerals from the value of the input
-        public static string ConvertValue(int input)
+        public static string ConvertNumberToRomanNumeral(int number)
         {
-            CheckIfValidInput(input); // checks legal input is being converted
+            CheckIfValidNumber(number); // checks legal input is being converted
 
             // Create variables for conversion
-            string output = "";
+            string output = string.Empty;
             int count;
             int denominator;
             string roman;
 
             // Loop through input value while removing its current largest denominator and building a Roman numeral
             // from the given value
-            while (input > 0)
+            while (number > 0)
             {
-                roman = GetRomanNumeral(input);
+                roman = GetRomanNumeral(number);
                 denominator = GetDecimalValue(roman);
-                count = input / denominator;
+                count = number / denominator;
                 output = BuildRomanNumeral(output, count, roman);
-                input -= (denominator * count);
+                number -= (denominator * count);
             }
 
             return output;
         }
 
         // Helper method that will return the Roman numeral associated with the numeric value passed in.
-        private static string GetRomanNumeral(int input)
+        private static string GetRomanNumeral(int number)
         {
-            if (input / 1000 > 0)
+            if (number / 1000 > 0)
                 return "M";
-            else if (input / 900 > 0)
+            else if (number / 900 > 0)
                 return "CM";
-            else if (input / 500 > 0)
+            else if (number / 500 > 0)
                 return "D";
-            else if (input / 400 > 0)
+            else if (number / 400 > 0)
                 return "CD";
-            else if (input / 100 > 0)
+            else if (number / 100 > 0)
                 return "C";
-            else if (input / 90 > 0)
+            else if (number / 90 > 0)
                 return "XC";
-            else if (input / 50 > 0)
+            else if (number / 50 > 0)
                 return "L";
-            else if (input / 40 > 0)
+            else if (number / 40 > 0)
                 return "XL";
-            else if (input / 10 > 0)
+            else if (number / 10 > 0)
                 return "X";
-            else if (input / 9 > 0)
+            else if (number / 9 > 0)
                 return "IX";
-            else if (input / 5 > 0)
+            else if (number / 5 > 0)
                 return "V";
-            else if (input / 4 > 0)
+            else if (number / 4 > 0)
                 return "IV";
 
             return "I";
         }
 
         // Helper method that will return the value associated with the Roman numeral value passed in.
-        private static int GetDecimalValue(string input)
+        private static int GetDecimalValue(string roman)
         {
-            if (input == "M")
+            if (roman == "M")
                 return 1000;
-            else if (input == "CM")
+            else if (roman == "CM")
                 return 900;
-            else if (input == "D")
+            else if (roman == "D")
                 return 500;
-            else if (input == "CD")
+            else if (roman == "CD")
                 return 400;
-            else if (input == "C")
+            else if (roman == "C")
                 return 100;
-            else if (input == "XC")
+            else if (roman == "XC")
                 return 90;
-            else if (input == "L")
+            else if (roman == "L")
                 return 50;
-            else if (input == "XL")
+            else if (roman == "XL")
                 return 40;
-            else if (input == "X")
+            else if (roman == "X")
                 return 10;
-            else if (input == "IX")
+            else if (roman == "IX")
                 return 9;
-            else if (input == "V")
+            else if (roman == "V")
                 return 5;
-            else if (input == "IV")
+            else if (roman == "IV")
                 return 4;
 
             return 1;
@@ -105,55 +105,40 @@ namespace RomanNumerals.Kata
             return output;
         }
 
-        public static string ReduceValue(string input)
-        {
-            if (input == "IIII")
-            {
-                return "IV";
-            }
-
-            if (input == "IVI")
-            {
-                return "V";
-            }
-
-            return input;
-        }
-
         // Throws ArgumentOutOfRangeException if input is less than 0.
-        public static void CheckNegative(int input)
+        private static void CheckNegative(int number)
         {
-            if (input < 0)
+            if (number < 0)
                 throw new ArgumentOutOfRangeException();
         }
 
         // Throws ArgumentOutOfRangeException if input is greater than 3999
-        public static void CheckBeyondUpperLimit(int input)
+        private static void CheckBeyondUpperLimit(int number)
         {
-            if (input >= 4000)
+            if (number >= 4000)
                 throw new ArgumentOutOfRangeException();
         }
 
         // Throws ArgumentOutOfRangeException if input is less than 0 or greater than 3999
-        public static void CheckOutOfRange(int input)
+        private static void CheckOutOfRange(int number)
         {
-            if (input < 0 || input >= 4000)
+            if (number < 0 || number >= 4000)
                 throw new ArgumentOutOfRangeException();
         }
 
         // Throws ArgumentNullException if input is equal to 0.
-        public static void CheckIfZero(int input)
+        private static void CheckIfZero(int number)
         {
-            if (input == 0)
+            if (number == 0)
                 throw new ArgumentNullException();
         }
 
         // Throws either ArgumentOutOfRangeException if input is out of the allowed range or
         // throws ArgumentNullException if input is 0.
-        public static void CheckIfValidInput(int input)
+        private static void CheckIfValidNumber(int number)
         {
-            CheckOutOfRange(input);
-            CheckIfZero(input);
+            CheckOutOfRange(number);
+            CheckIfZero(number);
         }
     }
 }
