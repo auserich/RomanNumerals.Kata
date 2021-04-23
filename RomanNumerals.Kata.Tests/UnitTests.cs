@@ -76,6 +76,26 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_TwentyEightToXXVIII()
+        {
+            int input = 28;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("XXVIII", output);
+        }
+
+        [Fact]
+        public void ConvertValue_ThirtyTwoToXXXII()
+        {
+            int input = 32;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("XXXII", output);
+        }
+
+        [Fact]
         public void ReduceValue_IIIToIV()
         {
             string input = "IIII";
