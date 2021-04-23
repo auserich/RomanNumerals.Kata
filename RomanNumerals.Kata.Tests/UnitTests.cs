@@ -220,8 +220,6 @@ namespace RomanNumerals.Kata.Tests
         {
             int input = -1;
 
-            string output = RomanNumerals.ConvertValue(input);
-
             Assert.Throws<ArgumentOutOfRangeException>(() => { RomanNumerals.CheckNegative(input); });
         }
 
@@ -239,8 +237,6 @@ namespace RomanNumerals.Kata.Tests
         public void ConvertValue_NegativeFour_ThrowsOutOfRangeException()
         {
             int input = -4;
-
-            string output = RomanNumerals.ConvertValue(input);
 
             Assert.Throws<ArgumentOutOfRangeException>(() => { RomanNumerals.ConvertValue(input); });
         }

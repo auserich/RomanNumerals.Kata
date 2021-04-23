@@ -7,6 +7,8 @@ namespace RomanNumerals.Kata
         // Method that takes an integer value that builds a string of Roman numerals from the value of the input
         public static string ConvertValue(int input)
         {
+            CheckNegative(input);
+
             string output = "";
             int count;
             int denominator;
