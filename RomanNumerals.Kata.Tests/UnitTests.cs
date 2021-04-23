@@ -96,6 +96,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_FortyTwoToILII()
+        {
+            int input = 42;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("ILII", output);
+        }
+
+        [Fact]
         public void ReduceValue_IIIToIV()
         {
             string input = "IIII";
