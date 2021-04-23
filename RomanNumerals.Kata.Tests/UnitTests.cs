@@ -106,6 +106,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_FiftyFiveToLV()
+        {
+            int input = 55;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("LV", output);
+        }
+
+        [Fact]
         public void ReduceValue_IIIToIV()
         {
             string input = "IIII";
