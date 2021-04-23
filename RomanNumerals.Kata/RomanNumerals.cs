@@ -8,6 +8,7 @@ namespace RomanNumerals.Kata
         public static string ConvertValue(int input)
         {
             CheckNegative(input);
+            CheckBeyondUpperLimit(input);
 
             string output = "";
             int count;
