@@ -156,6 +156,16 @@ namespace RomanNumerals.Kata.Tests
         }
 
         [Fact]
+        public void ConvertValue_FourHundredTwentyEightToCDXXVIII()
+        {
+            int input = 428;
+
+            string output = RomanNumerals.ConvertValue(input);
+
+            Assert.Equal("CDXXVIII", output);
+        }
+
+        [Fact]
         public void ReduceValue_IIIToIV()
         {
             string input = "IIII";
