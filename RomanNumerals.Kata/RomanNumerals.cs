@@ -10,26 +10,33 @@ namespace RomanNumerals.Kata
             string output = "";
             int count;
 
-            // Series of checks to find highest denominator of Roman numeral to match with input
-            if (input / 10 > 0)
+            while (input > 0)
             {
-                count = input / 10;
-                output = BuildRomanNumeral(output, count, "X");
-            }
-            else if (input / 5 > 0)
-            {
-                count = input / 5;
-                output = BuildRomanNumeral(output, count, "V");
-            }
-            else if (input / 4 > 0)
-            {
-                count = 1;
-                output = BuildRomanNumeral(output, count, "IV");
-            }
-            else if (input / 1 > 0)
-            {
-                count = input;
-                output = BuildRomanNumeral(output, count, "I");
+                // Series of checks to find highest denominator of Roman numeral to match with input
+                if (input / 10 > 0)
+                {
+                    count = input / 10;
+                    output = BuildRomanNumeral(output, count, "X");
+                    input -= (10 * count);
+                }
+                else if (input / 5 > 0)
+                {
+                    count = input / 5;
+                    output = BuildRomanNumeral(output, count, "V");
+                    input -= (5 * count);
+                }
+                else if (input / 4 > 0)
+                {
+                    count = 1;
+                    output = BuildRomanNumeral(output, count, "IV");
+                    input -= 4;
+                }
+                else if (input / 1 > 0)
+                {
+                    count = input;
+                    output = BuildRomanNumeral(output, count, "I");
+                    input -= (1 * count);
+                }
             }
 
             return output;
