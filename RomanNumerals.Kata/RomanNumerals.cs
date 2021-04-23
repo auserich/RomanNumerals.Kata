@@ -132,5 +132,11 @@ namespace RomanNumerals.Kata
             if (input < 0 || input >= 4000)
                 throw new ArgumentOutOfRangeException();
         }
+
+        public static void CheckIfZero(int input)
+        {
+            if (input == 0)
+                throw new ArgumentNullException();
+        }
     }
 }
