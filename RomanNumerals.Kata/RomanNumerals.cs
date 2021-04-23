@@ -19,6 +19,12 @@ namespace RomanNumerals.Kata
                     output = BuildRomanNumeral(output, count, "CM");
                     input -= 900;
                 }
+                else if (input / 500 > 0)
+                {
+                    count = input / 500;
+                    output = BuildRomanNumeral(output, count, "D");
+                    input -= 500;
+                }
                 else if (input / 400 > 0)
                 {
                     count = 1;
